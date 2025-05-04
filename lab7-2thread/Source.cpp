@@ -20,7 +20,8 @@ int main(int argc, const char* argv[]) {
 		scndPart[i] = arr[i + (len / 2)];
 	}
 
-	std::thread thread1(sortPart, "thread1", frstPart, len / 2), thread2(sortPart, "thread2", scndPart, len / 2);
+	std::thread thread1(sortPart, "thread1", frstPart, len / 2);
+	std::thread thread2(sortPart, "thread2", scndPart, len / 2);
 	thread1.join();
 	thread2.join();
 
